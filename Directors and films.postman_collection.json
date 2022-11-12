@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "0b3fb021-55e8-4a20-ac34-5c91a250bee3",
+		"name": "Directors and films",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24214096"
+	},
+	"item": [
+		{
+			"name": "GET Directors",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/directors",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"directors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Films",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/directors/1/films",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"directors",
+						"1",
+						"films"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Director",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/directors/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"directors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Film",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"The Godfather III\",\n    \"description\": \"Clasicazox3\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/directors/3/films",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"directors",
+						"3",
+						"films"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Film",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Updated - Empire of the sun\",\n    \"description\": \"Updated - My favourite film.\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/directors/1/films/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"directors",
+						"1",
+						"films",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Film",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/directors/1/films/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"directors",
+						"1",
+						"films",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
