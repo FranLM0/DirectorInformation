@@ -16,11 +16,10 @@ namespace DirectorInformation.API.Controllers
         private readonly IDirectorInformationRepository _directorInfoRepository;
         private readonly IMapper _mapper;
 
-        public FilmController(ILogger<FilmController> logger,
-           IDirectorInformationRepository cityInfoRepository,
+        public FilmController(IDirectorInformationRepository cityInfoRepository,
            IMapper mapper)
         {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            
             _directorInfoRepository = cityInfoRepository ?? throw new ArgumentNullException(nameof(cityInfoRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
@@ -36,8 +35,7 @@ namespace DirectorInformation.API.Controllers
             //}
             if (!await _directorInfoRepository.DirectorExistsAsync(directorId))
             {
-                _logger.LogInformation(
-                    $"Director with id {directorId} wasn't found when accesing films.");
+                
                 return NotFound();
             }
             var filmsForDirector = await _directorInfoRepository.GetFilmsForDirectorAsync(directorId);
